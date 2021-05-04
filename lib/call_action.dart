@@ -33,7 +33,7 @@ class ActionCall extends StatelessWidget {
               child: OutlinedButton(
                 style: OutlinedButton.styleFrom(
                   primary: Colors.black,
-                  backgroundColor: Color(0xFFFFFF),
+                  backgroundColor: Color(0xFFFFFFFF),
                 ),
                 onPressed: () {
                   print("Message");
