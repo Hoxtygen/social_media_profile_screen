@@ -42,6 +42,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       body: children[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         backgroundColor: Colors.lightBlue,
         currentIndex: _selectedIndex,
         fixedColor: Colors.black,
