@@ -26,10 +26,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   int _selectedIndex = 0;
   final List<Widget> children = [
     Profile(Colors.blueGrey.shade50),
-    Profile(Colors.purpleAccent),
-    Profile(Colors.yellowAccent),
-    Profile(Colors.deepOrange),
-    Profile(Colors.lightGreen),
+    Profile(Colors.white),
+    Profile(Colors.white70),
+    Profile(Colors.white70),
+    Profile(Colors.white70),
   ];
   void onSelected(int index) {
     setState(() {
