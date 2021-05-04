@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_profile_screen/profile.dart';
 
 const iconsPath = 'assets/icons/';
 const imagePath = 'assets/images/';
@@ -16,12 +17,56 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  int _selectedIndex = 0;
+  final List<Widget> children = [
+    Profile(Colors.blueGrey.shade50),
+    Profile(Colors.purpleAccent),
+    Profile(Colors.yellowAccent),
+    Profile(Colors.deepOrange),
+    Profile(Colors.lightGreen),
+  ];
+  void onSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text("Social Media Profile"),
+      body: children[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.lightBlue,
+        currentIndex: _selectedIndex,
+        fixedColor: Colors.black,
+        unselectedItemColor: Colors.black,
+        onTap: onSelected,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.video_library),
+            label: "Video",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_bag),
+            label: "Bag",
+          ),
+          BottomNavigationBarItem(
+            label: "Profile",
+            icon: Image.asset(
+              "assets/images/avatar.png",
+              width: 30,
+              height: 30,
+            ),
+          )
+        ],
       ),
     );
   }
