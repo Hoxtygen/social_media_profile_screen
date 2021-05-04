@@ -54,6 +54,7 @@ class ActionCall extends StatelessWidget {
                 padding: EdgeInsets.all(5),
                 child: Icon(Icons.keyboard_arrow_down_rounded),
                 decoration: BoxDecoration(
+                  color: Colors.white,
                   border: Border.all(
                     width: 1,
                     style: BorderStyle.solid,
@@ -67,12 +68,7 @@ class ActionCall extends StatelessWidget {
               onTap: () {
                 print("More options");
               },
-            )
-
-            // IconButton(
-            //   icon: Icon(Icons.keyboard_arrow_down_rounded),
-            //   onPressed: () => print("You pressed the icon button"),
-            // )
+            ),
           ],
         ),
       ),
